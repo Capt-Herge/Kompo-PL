@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsLogic
 {
-    public public interface IDialog
+    public interface IDialog
     {
     }
 }

@@ -13,10 +13,10 @@ namespace PartsLogic
         #endregion
 
         #region interface props
-        public ILogicCount Count { get; }
-        public ILogicManage Manage { get; }
-        public ILogicModify Modify { get; }
-        public ILogicSearch Search { get; }
+        public ILogicCount Count { get; internal set; }
+        public ILogicManage Manage { get; internal set; }
+        public ILogicModify Modify { get; internal set; }
+        public ILogicSearch Search { get; internal set; }
         #endregion
 
         #region ctor
