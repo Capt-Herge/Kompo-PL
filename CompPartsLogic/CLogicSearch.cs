@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsLogic
 {
-    internal class CLogicSearch
+    internal class CLogicSearch : ILogicSearch
     {
         #region fields
         private IDataSearch _dataSearch;

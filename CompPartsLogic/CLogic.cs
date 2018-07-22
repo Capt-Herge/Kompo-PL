@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace PartsLogic
 {
-    internal class CLogic
+    internal class CLogic : ILogic
     {
         #region fields
         private IData _data;
+        #endregion
+
+        #region interface props
+        public ILogicCount Count { get; }
+        public ILogicManage Manage { get; }
+        public ILogicModify Modify { get; }
+        public ILogicSearch Search { get; }
         #endregion
 
         #region ctor

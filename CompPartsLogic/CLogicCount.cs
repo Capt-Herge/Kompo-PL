@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsLogic
 {
-    internal class CLogicCount
+    internal class CLogicCount : ILogicCount
     {
         #region fields
         private IDataCount _dataCount;

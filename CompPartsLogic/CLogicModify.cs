@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsLogic
 {
-    internal class CLogicModify
+    internal class CLogicModify : ILogicModify
     {
         #region fields
         private IDataModify _dataModify;

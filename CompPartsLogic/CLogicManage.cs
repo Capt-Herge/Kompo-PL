@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsLogic
 {
-    internal class CLogicManage
+    internal class CLogicManage : ILogicManage
     {
         #region fields
         private IDataManage _dataManage;
