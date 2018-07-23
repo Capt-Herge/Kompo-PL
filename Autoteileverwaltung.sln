@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autoteileverwaltung", "Auto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompPartsLogic", "CompPartsLogic\CompPartsLogic.csproj", "{8D5FDB86-E3C0-4F7B-9921-F6D2237FAB0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompPartsUI", "CompPartsUI\CompPartsUI.csproj", "{FD6057C1-B17C-47FB-A84C-B30302CCF9E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompPartsData", "CompPartsData\CompPartsData.csproj", "{416CFEA5-1912-44DD-B4B5-C10CC1A27A9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{8D5FDB86-E3C0-4F7B-9921-F6D2237FAB0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D5FDB86-E3C0-4F7B-9921-F6D2237FAB0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D5FDB86-E3C0-4F7B-9921-F6D2237FAB0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6057C1-B17C-47FB-A84C-B30302CCF9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6057C1-B17C-47FB-A84C-B30302CCF9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6057C1-B17C-47FB-A84C-B30302CCF9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6057C1-B17C-47FB-A84C-B30302CCF9E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{416CFEA5-1912-44DD-B4B5-C10CC1A27A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{416CFEA5-1912-44DD-B4B5-C10CC1A27A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{416CFEA5-1912-44DD-B4B5-C10CC1A27A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{416CFEA5-1912-44DD-B4B5-C10CC1A27A9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
