@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,18 +42,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDialog.cs" />
-    <Compile Include="Count\CDialogCount.cs" />
+    <Compile Include="CDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CDialog.Designer.cs">
+      <DependentUpon>CDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Count\CDialogCount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Count\CDialogCount.Designer.cs">
+      <DependentUpon>CDialogCount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Factories\AFactoryDialogCount.cs" />
     <Compile Include="Factories\AFactoryDialogManage.cs" />
     <Compile Include="Factories\AFactoryDialogModify.cs" />
     <Compile Include="Factories\AFactoryDialogSearch.cs" />
     <Compile Include="Factories\CFactoryCDialog.cs" />
-    <Compile Include="Manage\CDialogManage.cs" />
-    <Compile Include="Modify\CDialogModify.cs" />
+    <Compile Include="Manage\CDialogManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\CDialogManage.Designer.cs">
+      <DependentUpon>CDialogManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modify\CDialogModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modify\CDialogModify.Designer.cs">
+      <DependentUpon>CDialogModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Search\CDialogSearch.cs" />
-    <Compile Include="Search\CDialogSearchResult.cs" />
+    <Compile Include="Search\CDialogSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\CDialogSearch.Designer.cs">
+      <DependentUpon>CDialogSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\CDialogSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\CDialogSearchResult.Designer.cs">
+      <DependentUpon>CDialogSearchResult.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CompPartsLogic\CompPartsLogic.csproj">

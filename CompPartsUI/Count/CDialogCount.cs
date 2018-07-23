@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PartsLogic;
+using System.Windows.Forms;
 
 namespace PartsUI.Count
 {
-    class CDialogCount
+    public partial class CDialogCount : Form
     {
+        public CDialogCount()
+        {
+            InitializeComponent();
+        }
     }
 }
