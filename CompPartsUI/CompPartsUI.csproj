@@ -53,6 +53,11 @@
     <Compile Include="Search\CDialogSearch.cs" />
     <Compile Include="Search\CDialogSearchResult.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CompPartsLogic\CompPartsLogic.csproj">
+      <Project>{8d5fdb86-e3c0-4f7b-9921-f6d2237fab0c}</Project>
+      <Name>CompPartsLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

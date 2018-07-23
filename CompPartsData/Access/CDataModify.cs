@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PartsLogic;
 
-namespace CompPartsData.Access
+namespace PartsData.Access
 {
     class CDataModify
     {
