@@ -42,29 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddItem\CDialogAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddItem\CDialogAddItem.Designer.cs">
+      <DependentUpon>CDialogAddItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="CDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CDialog.Designer.cs">
       <DependentUpon>CDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Count\CDialogCount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Count\CDialogCount.Designer.cs">
-      <DependentUpon>CDialogCount.cs</DependentUpon>
-    </Compile>
     <Compile Include="Factories\AFactoryDialogCount.cs" />
     <Compile Include="Factories\AFactoryDialogManage.cs" />
     <Compile Include="Factories\AFactoryDialogModify.cs" />
     <Compile Include="Factories\AFactoryDialogSearch.cs" />
     <Compile Include="Factories\CFactoryCDialog.cs" />
-    <Compile Include="Manage\CDialogManage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Manage\CDialogManage.Designer.cs">
-      <DependentUpon>CDialogManage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modify\CDialogModify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,5 +85,23 @@
       <Name>CompPartsLogic</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddItem\CDialogAddItem.resx">
+      <DependentUpon>CDialogAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CDialog.resx">
+      <DependentUpon>CDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modify\CDialogModify.resx">
+      <DependentUpon>CDialogModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\CDialogSearch.resx">
+      <DependentUpon>CDialogSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\CDialogSearchResult.resx">
+      <DependentUpon>CDialogSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
