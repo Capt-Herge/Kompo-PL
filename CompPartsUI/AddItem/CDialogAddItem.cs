@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PartsUI.Manage
+namespace PartsUI.AddItem
 {
-    public partial class CDialogManage : Form
+    public partial class CDialogAddItem : Form
     {
-        public CDialogManage()
+        public CDialogAddItem()
         {
             InitializeComponent();
         }
