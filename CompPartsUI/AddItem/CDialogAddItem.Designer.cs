@@ -44,7 +44,9 @@
             this.tb_anzahl = new System.Windows.Forms.TextBox();
             this.btn_abbrechen = new System.Windows.Forms.Button();
             this.btn_anlegen = new System.Windows.Forms.Button();
+            this.pb_addItem = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_addItem)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_name
@@ -181,12 +183,23 @@
             this.btn_anlegen.Text = "Anlegen";
             this.btn_anlegen.UseVisualStyleBackColor = true;
             // 
+            // pb_addItem
+            // 
+            this.pb_addItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pb_addItem.Location = new System.Drawing.Point(0, 24);
+            this.pb_addItem.Margin = new System.Windows.Forms.Padding(0);
+            this.pb_addItem.Name = "pb_addItem";
+            this.pb_addItem.Size = new System.Drawing.Size(1008, 200);
+            this.pb_addItem.TabIndex = 15;
+            this.pb_addItem.TabStop = false;
+            // 
             // CDialogAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.pb_addItem);
             this.Controls.Add(this.btn_anlegen);
             this.Controls.Add(this.btn_abbrechen);
             this.Controls.Add(this.tb_anzahl);
@@ -211,6 +224,7 @@
             this.Text = "Autoteil anlegen";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_addItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +248,6 @@
         private System.Windows.Forms.TextBox tb_anzahl;
         private System.Windows.Forms.Button btn_abbrechen;
         private System.Windows.Forms.Button btn_anlegen;
+        private System.Windows.Forms.PictureBox pb_addItem;
     }
 }
