@@ -66,6 +66,7 @@
             this.zurückZumMenüToolStripMenuItem.Name = "zurückZumMenüToolStripMenuItem";
             this.zurückZumMenüToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.zurückZumMenüToolStripMenuItem.Text = "Zurück zum Menü";
+            this.zurückZumMenüToolStripMenuItem.Click += new System.EventHandler(this.zurückZumMenüToolStripMenuItem_Click);
             // 
             // btn_suchen
             // 
@@ -76,6 +77,7 @@
             this.btn_suchen.TabIndex = 28;
             this.btn_suchen.Text = "Suchen";
             this.btn_suchen.UseVisualStyleBackColor = true;
+            this.btn_suchen.Click += new System.EventHandler(this.btn_suchen_Click);
             // 
             // btn_abbrechen
             // 
@@ -86,6 +88,7 @@
             this.btn_abbrechen.TabIndex = 27;
             this.btn_abbrechen.Text = "Abbrechen";
             this.btn_abbrechen.UseVisualStyleBackColor = true;
+            this.btn_abbrechen.Click += new System.EventHandler(this.btn_abbrechen_Click);
             // 
             // tb_anzahl
             // 

@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddItem\CDialogAddItem.cs">
+    <Compile Include="Add\CDialogAddItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddItem\CDialogAddItem.Designer.cs">
+    <Compile Include="Add\CDialogAddItem.Designer.cs">
       <DependentUpon>CDialogAddItem.cs</DependentUpon>
     </Compile>
     <Compile Include="CDialog.cs">
@@ -54,7 +54,6 @@
     <Compile Include="CDialog.Designer.cs">
       <DependentUpon>CDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Factories\AFactoryDialogCount.cs" />
     <Compile Include="Factories\AFactoryDialogManage.cs" />
     <Compile Include="Factories\AFactoryDialogModify.cs" />
     <Compile Include="Factories\AFactoryDialogSearch.cs" />
@@ -91,7 +90,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddItem\CDialogAddItem.resx">
+    <EmbeddedResource Include="Add\CDialogAddItem.resx">
       <DependentUpon>CDialogAddItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CDialog.resx">

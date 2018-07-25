@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PartsUI.Search
+namespace PartsUI.Add
 {
-    public partial class CDialogSearch : Form
+    public partial class CDialogAdd : Form
     {
         #region fields
         #endregion
@@ -19,7 +19,7 @@ namespace PartsUI.Search
         #endregion
 
         #region events
-        public CDialogSearch()
+        public CDialogAdd()
         {
             InitializeComponent();
         }
@@ -32,14 +32,12 @@ namespace PartsUI.Search
         // Eventhandler Abbrechen
         private void btn_abbrechen_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+
         }
-        // Eventhandler Suchen
-        private void btn_suchen_Click(object sender, EventArgs e)
+        // Eventhandler Anlegen
+        private void btn_anlegen_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+
         }
         #endregion
     }
