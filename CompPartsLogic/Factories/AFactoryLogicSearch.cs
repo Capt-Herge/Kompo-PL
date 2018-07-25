@@ -6,7 +6,8 @@ namespace PartsLogic.Factories
     {
         public static void Create(ILogic logic, IDataSearch dataSearch)
         {
-
+            if (logic is CLogic)
+               (logic as CLogic).Search = new CLogicSearch(dataSearch);
         }
     }
 }

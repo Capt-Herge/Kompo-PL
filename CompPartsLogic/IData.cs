@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 namespace PartsLogic
@@ -10,5 +11,6 @@ namespace PartsLogic
         IDataModify Modify { get; }
 
         void Init();
+        void GetHersteller(out IList<string> hersteller);
     }
 }

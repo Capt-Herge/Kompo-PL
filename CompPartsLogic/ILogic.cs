@@ -11,5 +11,8 @@ namespace PartsLogic
         ILogicModify Modify { get; }
         ILogicSearch Search { get; }
 
+
+        void GetHersteller( out object[] arrayMakers );
     }
+
 }

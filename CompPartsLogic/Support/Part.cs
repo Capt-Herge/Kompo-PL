@@ -17,6 +17,8 @@ namespace PartsLogic.Support
         #endregion
 
         #region ctor
+        public Part() { }
+
         public Part(DataRow dataRow )
         {
             PkID = Convert.ToInt32(dataRow.ItemArray[0]);

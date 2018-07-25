@@ -61,6 +61,7 @@
     <Compile Include="ILogicModify.cs" />
     <Compile Include="ILogicSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support\Conversions.cs" />
     <Compile Include="Support\Part.cs" />
   </ItemGroup>
   <ItemGroup />
