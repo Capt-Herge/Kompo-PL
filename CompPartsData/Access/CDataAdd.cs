@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using PartsLogic;
 
-namespace PartsData
+namespace PartsData.Access
 {
-    class ADataManage
+    class CDataAdd
     {
     }
 }

@@ -82,7 +82,7 @@
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "CDialog";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "CDialog";
+            this.Text = "Autoteileverwaltung";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
