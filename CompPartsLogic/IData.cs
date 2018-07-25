@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace PartsLogic
 {
     public interface IData
     {
+        IDataSearch Search { get; }
+        IDataAdd Add { get; }
+        IDataModify Modify { get; }
+
+        void Init();
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+
+using PartsLogic.Support;
 
 namespace PartsLogic
 {
     public interface ILogicSearch
     {
+        void ReadParts(Part partSearch, out DataTable dataTable);
     }
 }

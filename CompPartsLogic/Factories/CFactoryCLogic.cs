@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PartsLogic.Factories
 {
-    class CFactoryCLogic : IFactoryILogic
+    public class CFactoryCLogic : IFactoryILogic
     {
         public ILogic Create(IData data)
         {

@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+
+using PartsLogic.Support;
 
 namespace PartsLogic
 {
     public interface ILogic
     {
-        ILogicCount Count { get; }
-        ILogicManage Manage { get; }
+        ILogicAdd Add { get; }
         ILogicModify Modify { get; }
         ILogicSearch Search { get; }
 

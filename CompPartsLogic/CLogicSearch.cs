@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
+
+using PartsLogic.Support;
 
 namespace PartsLogic
 {
@@ -16,6 +15,13 @@ namespace PartsLogic
         internal CLogicSearch(IDataSearch dataSearch)
         {
             _dataSearch = dataSearch;
+        }
+        #endregion
+
+        #region ILogicSearch Methoden
+        public void ReadParts(Part partSearch, out DataTable dataTable)
+        {
+            _dataSearch.ReadParts(partSearch, out dataTable);
         }
         #endregion
     }
