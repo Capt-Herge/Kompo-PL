@@ -3,11 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PartsData.Factories;
+using PartsLogic;
+using PartsLogic.Factories;
+using PartsUI.Factories;
 
 namespace Autoteileverwaltung
 {
-    static class Program
+    class Program
     {
+        #region fields
+        // State
+        private IData _data;
+        private ILogic _logic;
+        private IDialog _dialogMain;
+        #endregion
+
+        #region methods
+        void Run()
+        {
+
+        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +32,8 @@ namespace Autoteileverwaltung
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            new Program().Run();
         }
+        #endregion
     }
 }

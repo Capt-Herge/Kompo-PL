@@ -54,18 +54,21 @@
             this.lagerbestandAnzeigenToolStripMenuItem.Name = "lagerbestandAnzeigenToolStripMenuItem";
             this.lagerbestandAnzeigenToolStripMenuItem.Size = new System.Drawing.Size(142, 20);
             this.lagerbestandAnzeigenToolStripMenuItem.Text = "Lagerbestand Anzeigen";
+            this.lagerbestandAnzeigenToolStripMenuItem.Click += new System.EventHandler(this.lagerbestandAnzeigenToolStripMenuItem_Click);
             // 
             // sucheToolStripMenuItem
             // 
             this.sucheToolStripMenuItem.Name = "sucheToolStripMenuItem";
             this.sucheToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.sucheToolStripMenuItem.Text = "Suche";
+            this.sucheToolStripMenuItem.Click += new System.EventHandler(this.sucheToolStripMenuItem_Click);
             // 
             // neuesTeilAnlegenToolStripMenuItem
             // 
             this.neuesTeilAnlegenToolStripMenuItem.Name = "neuesTeilAnlegenToolStripMenuItem";
             this.neuesTeilAnlegenToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
             this.neuesTeilAnlegenToolStripMenuItem.Text = "Neues Teil Anlegen";
+            this.neuesTeilAnlegenToolStripMenuItem.Click += new System.EventHandler(this.neuesTeilAnlegenToolStripMenuItem_Click);
             // 
             // CDialog
             // 

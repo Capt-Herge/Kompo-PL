@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -74,6 +68,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompPartsData\CompPartsData.csproj">
+      <Project>{416cfea5-1912-44dd-b4b5-c10cc1a27a9c}</Project>
+      <Name>CompPartsData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompPartsLogic\CompPartsLogic.csproj">
+      <Project>{8d5fdb86-e3c0-4f7b-9921-f6d2237fab0c}</Project>
+      <Name>CompPartsLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompPartsUI\CompPartsUI.csproj">
+      <Project>{fd6057c1-b17c-47fb-a84c-b30302ccf9e6}</Project>
+      <Name>CompPartsUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
