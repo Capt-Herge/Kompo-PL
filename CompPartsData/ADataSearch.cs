@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PartsLogic;
+using PartsLogic.Support;
 
 namespace PartsData
 {
-    public class ADataSearch
+    internal abstract class ADataSearch : IDataSearch
     {
+
     }
 }
