@@ -26,9 +26,36 @@ namespace PartsData
         #endregion
 
         #region ctor
+        internal AData(string connection)
+        {
+            _connection = connection;
+        }
         #endregion
 
         #region interface IData methods
+        public void Init()
+        {
+            _dbProviderFactory = DbProviderFactories.GetFactory(_provider);
+            if (_dbProviderFactory == null)
+            {
+                throw new CDataException("InitDb() konnte DbProviderFactory nicht erzeugen");
+            }
+
+            _dbConnection = _dbProviderFactory.CreateConnection();
+            if(_dbConnection == null)
+            {
+                throw new CDataException("InitDb() konne DbConnection nicht erzeugen");
+            }
+            _dbConnection.ConnectionString = _connection;
+
+            _dbCommand = _dbProviderFactory.CreateCommand();
+            _dbCommand.Connection = _dbConnection;
+            _dbCommand.CommandType = CommandType.Text;
+
+            _dataAdd.Init(_dbProviderFactory, _dbConnection, _dbCommand);
+            _dataModify.Init(_dbProviderFactory, _dbConnection, _dbCommand);
+            _dataSearch.Init(_dbProviderFactory, _dbConnection, _dbCommand);
+        }
         public void GetHersteller(out IList<string> hersteller)
         {
 
