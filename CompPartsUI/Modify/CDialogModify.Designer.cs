@@ -206,7 +206,7 @@
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "CDialogModify";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "CDialogModify";
+            this.Text = "Autoteil bearbeiten";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

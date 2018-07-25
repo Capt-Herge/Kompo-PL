@@ -50,7 +50,7 @@
             // lbl_name
             // 
             this.lbl_name.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_name.Location = new System.Drawing.Point(40, 50);
+            this.lbl_name.Location = new System.Drawing.Point(40, 250);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(300, 25);
             this.lbl_name.TabIndex = 0;
@@ -59,7 +59,7 @@
             // lbl_pn
             // 
             this.lbl_pn.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_pn.Location = new System.Drawing.Point(40, 150);
+            this.lbl_pn.Location = new System.Drawing.Point(40, 350);
             this.lbl_pn.Name = "lbl_pn";
             this.lbl_pn.Size = new System.Drawing.Size(300, 25);
             this.lbl_pn.TabIndex = 1;
@@ -68,7 +68,7 @@
             // lbl_preis
             // 
             this.lbl_preis.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_preis.Location = new System.Drawing.Point(40, 250);
+            this.lbl_preis.Location = new System.Drawing.Point(40, 450);
             this.lbl_preis.Name = "lbl_preis";
             this.lbl_preis.Size = new System.Drawing.Size(300, 25);
             this.lbl_preis.TabIndex = 2;
@@ -77,7 +77,7 @@
             // lbl_hersteller
             // 
             this.lbl_hersteller.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_hersteller.Location = new System.Drawing.Point(500, 50);
+            this.lbl_hersteller.Location = new System.Drawing.Point(500, 250);
             this.lbl_hersteller.Name = "lbl_hersteller";
             this.lbl_hersteller.Size = new System.Drawing.Size(300, 25);
             this.lbl_hersteller.TabIndex = 3;
@@ -86,7 +86,7 @@
             // lbl_beschreibung
             // 
             this.lbl_beschreibung.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_beschreibung.Location = new System.Drawing.Point(500, 150);
+            this.lbl_beschreibung.Location = new System.Drawing.Point(500, 350);
             this.lbl_beschreibung.Name = "lbl_beschreibung";
             this.lbl_beschreibung.Size = new System.Drawing.Size(300, 25);
             this.lbl_beschreibung.TabIndex = 4;
@@ -95,7 +95,7 @@
             // lbl_anzahl
             // 
             this.lbl_anzahl.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_anzahl.Location = new System.Drawing.Point(500, 250);
+            this.lbl_anzahl.Location = new System.Drawing.Point(500, 450);
             this.lbl_anzahl.Name = "lbl_anzahl";
             this.lbl_anzahl.Size = new System.Drawing.Size(300, 25);
             this.lbl_anzahl.TabIndex = 5;
@@ -121,42 +121,42 @@
             // 
             // tb_name
             // 
-            this.tb_name.Location = new System.Drawing.Point(40, 75);
+            this.tb_name.Location = new System.Drawing.Point(40, 275);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(300, 20);
             this.tb_name.TabIndex = 7;
             // 
             // tb_pn
             // 
-            this.tb_pn.Location = new System.Drawing.Point(40, 175);
+            this.tb_pn.Location = new System.Drawing.Point(40, 375);
             this.tb_pn.Name = "tb_pn";
             this.tb_pn.Size = new System.Drawing.Size(300, 20);
             this.tb_pn.TabIndex = 8;
             // 
             // tb_preis
             // 
-            this.tb_preis.Location = new System.Drawing.Point(40, 275);
+            this.tb_preis.Location = new System.Drawing.Point(40, 475);
             this.tb_preis.Name = "tb_preis";
             this.tb_preis.Size = new System.Drawing.Size(300, 20);
             this.tb_preis.TabIndex = 9;
             // 
             // tb_hersteller
             // 
-            this.tb_hersteller.Location = new System.Drawing.Point(500, 75);
+            this.tb_hersteller.Location = new System.Drawing.Point(500, 275);
             this.tb_hersteller.Name = "tb_hersteller";
             this.tb_hersteller.Size = new System.Drawing.Size(300, 20);
             this.tb_hersteller.TabIndex = 10;
             // 
             // tb_beschreibung
             // 
-            this.tb_beschreibung.Location = new System.Drawing.Point(500, 175);
+            this.tb_beschreibung.Location = new System.Drawing.Point(500, 375);
             this.tb_beschreibung.Name = "tb_beschreibung";
             this.tb_beschreibung.Size = new System.Drawing.Size(300, 20);
             this.tb_beschreibung.TabIndex = 11;
             // 
             // tb_anzahl
             // 
-            this.tb_anzahl.Location = new System.Drawing.Point(500, 275);
+            this.tb_anzahl.Location = new System.Drawing.Point(500, 475);
             this.tb_anzahl.Name = "tb_anzahl";
             this.tb_anzahl.Size = new System.Drawing.Size(300, 20);
             this.tb_anzahl.TabIndex = 12;
@@ -208,7 +208,7 @@
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "CDialogAddItem";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "CDialogAddItem";
+            this.Text = "Autoteil anlegen";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
