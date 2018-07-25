@@ -41,13 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Access\CData.cs" />
-    <Compile Include="Access\CDataCount.cs" />
-    <Compile Include="Access\CDataManage.cs" />
+    <Compile Include="Access\CDataAdd.cs" />
     <Compile Include="Access\CDataModify.cs" />
     <Compile Include="Access\CDataSearch.cs" />
     <Compile Include="AData.cs" />
-    <Compile Include="ADataCount.cs" />
-    <Compile Include="ADataManage.cs" />
+    <Compile Include="ADataAdd.cs" />
     <Compile Include="ADataModify.cs" />
     <Compile Include="ADataSearch.cs" />
     <Compile Include="Factories\CFactoryCDataAccess.cs" />
