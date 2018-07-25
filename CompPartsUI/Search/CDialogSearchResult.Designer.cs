@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.zurückZumMenüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.neueSucheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,11 +75,12 @@
             this.dg_suchergebnis.Margin = new System.Windows.Forms.Padding(0);
             this.dg_suchergebnis.Name = "dg_suchergebnis";
             this.dg_suchergebnis.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.dg_suchergebnis.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.dg_suchergebnis.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_suchergebnis.Size = new System.Drawing.Size(1008, 705);
             this.dg_suchergebnis.TabIndex = 0;
+            this.dg_suchergebnis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_suchergebnis_CellClick);
             // 
             // CDialogSearchResult
             // 
@@ -95,6 +96,7 @@
             this.Name = "CDialogSearchResult";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Suchergebnis";
+            this.Load += new System.EventHandler(this.CDialogSearchResult_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_suchergebnis)).EndInit();

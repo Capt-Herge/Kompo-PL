@@ -23,9 +23,11 @@ namespace PartsUI
         private Part _partAdd;
         private Part _partSearch;
         private ILogic _logic;
+        private object[] _arrayHersteller;
         #endregion
 
         #region properties
+        internal object[] Hersteller { get { return _arrayHersteller; } }
         internal Part PartModify { get { return _partModify; } }
         internal Part PartAdd { get { return _partAdd; } }
         internal Part PartSearch { get { return _partSearch; } }
@@ -65,6 +67,7 @@ namespace PartsUI
         {
             try
             {
+                _logic.GetHersteller(out _arrayHersteller);
                 bool loop = true;
                 while(loop)
                 {
