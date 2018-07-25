@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDialogModify));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.zurückZumMenüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_speichern = new System.Windows.Forms.Button();
@@ -44,7 +45,9 @@
             this.lbl_preis = new System.Windows.Forms.Label();
             this.lbl_pn = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
+            this.pb_modify = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_modify)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -86,42 +89,42 @@
             // 
             // tb_anzahl
             // 
-            this.tb_anzahl.Location = new System.Drawing.Point(500, 275);
+            this.tb_anzahl.Location = new System.Drawing.Point(500, 475);
             this.tb_anzahl.Name = "tb_anzahl";
             this.tb_anzahl.Size = new System.Drawing.Size(300, 20);
             this.tb_anzahl.TabIndex = 26;
             // 
             // tb_beschreibung
             // 
-            this.tb_beschreibung.Location = new System.Drawing.Point(500, 175);
+            this.tb_beschreibung.Location = new System.Drawing.Point(500, 375);
             this.tb_beschreibung.Name = "tb_beschreibung";
             this.tb_beschreibung.Size = new System.Drawing.Size(300, 20);
             this.tb_beschreibung.TabIndex = 25;
             // 
             // tb_hersteller
             // 
-            this.tb_hersteller.Location = new System.Drawing.Point(500, 75);
+            this.tb_hersteller.Location = new System.Drawing.Point(500, 275);
             this.tb_hersteller.Name = "tb_hersteller";
             this.tb_hersteller.Size = new System.Drawing.Size(300, 20);
             this.tb_hersteller.TabIndex = 24;
             // 
             // tb_preis
             // 
-            this.tb_preis.Location = new System.Drawing.Point(40, 275);
+            this.tb_preis.Location = new System.Drawing.Point(40, 475);
             this.tb_preis.Name = "tb_preis";
             this.tb_preis.Size = new System.Drawing.Size(300, 20);
             this.tb_preis.TabIndex = 23;
             // 
             // tb_pn
             // 
-            this.tb_pn.Location = new System.Drawing.Point(40, 175);
+            this.tb_pn.Location = new System.Drawing.Point(40, 375);
             this.tb_pn.Name = "tb_pn";
             this.tb_pn.Size = new System.Drawing.Size(300, 20);
             this.tb_pn.TabIndex = 22;
             // 
             // tb_name
             // 
-            this.tb_name.Location = new System.Drawing.Point(40, 75);
+            this.tb_name.Location = new System.Drawing.Point(40, 275);
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(300, 20);
             this.tb_name.TabIndex = 21;
@@ -129,7 +132,7 @@
             // lbl_anzahl
             // 
             this.lbl_anzahl.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_anzahl.Location = new System.Drawing.Point(500, 250);
+            this.lbl_anzahl.Location = new System.Drawing.Point(500, 450);
             this.lbl_anzahl.Name = "lbl_anzahl";
             this.lbl_anzahl.Size = new System.Drawing.Size(300, 25);
             this.lbl_anzahl.TabIndex = 20;
@@ -138,7 +141,7 @@
             // lbl_beschreibung
             // 
             this.lbl_beschreibung.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_beschreibung.Location = new System.Drawing.Point(500, 150);
+            this.lbl_beschreibung.Location = new System.Drawing.Point(500, 350);
             this.lbl_beschreibung.Name = "lbl_beschreibung";
             this.lbl_beschreibung.Size = new System.Drawing.Size(300, 25);
             this.lbl_beschreibung.TabIndex = 19;
@@ -147,7 +150,7 @@
             // lbl_hersteller
             // 
             this.lbl_hersteller.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_hersteller.Location = new System.Drawing.Point(500, 50);
+            this.lbl_hersteller.Location = new System.Drawing.Point(500, 250);
             this.lbl_hersteller.Name = "lbl_hersteller";
             this.lbl_hersteller.Size = new System.Drawing.Size(300, 25);
             this.lbl_hersteller.TabIndex = 18;
@@ -156,7 +159,7 @@
             // lbl_preis
             // 
             this.lbl_preis.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_preis.Location = new System.Drawing.Point(40, 250);
+            this.lbl_preis.Location = new System.Drawing.Point(40, 450);
             this.lbl_preis.Name = "lbl_preis";
             this.lbl_preis.Size = new System.Drawing.Size(300, 25);
             this.lbl_preis.TabIndex = 17;
@@ -165,7 +168,7 @@
             // lbl_pn
             // 
             this.lbl_pn.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_pn.Location = new System.Drawing.Point(40, 150);
+            this.lbl_pn.Location = new System.Drawing.Point(40, 350);
             this.lbl_pn.Name = "lbl_pn";
             this.lbl_pn.Size = new System.Drawing.Size(300, 25);
             this.lbl_pn.TabIndex = 16;
@@ -174,17 +177,28 @@
             // lbl_name
             // 
             this.lbl_name.Font = new System.Drawing.Font("Lucida Console", 14F);
-            this.lbl_name.Location = new System.Drawing.Point(40, 50);
+            this.lbl_name.Location = new System.Drawing.Point(40, 250);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(300, 25);
             this.lbl_name.TabIndex = 15;
             this.lbl_name.Text = "Name:";
+            // 
+            // pb_modify
+            // 
+            this.pb_modify.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pb_modify.BackgroundImage")));
+            this.pb_modify.Location = new System.Drawing.Point(0, 24);
+            this.pb_modify.Margin = new System.Windows.Forms.Padding(0);
+            this.pb_modify.Name = "pb_modify";
+            this.pb_modify.Size = new System.Drawing.Size(1008, 200);
+            this.pb_modify.TabIndex = 29;
+            this.pb_modify.TabStop = false;
             // 
             // CDialogModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.pb_modify);
             this.Controls.Add(this.btn_speichern);
             this.Controls.Add(this.btn_abbrechen);
             this.Controls.Add(this.tb_anzahl);
@@ -209,6 +223,7 @@
             this.Text = "Autoteil bearbeiten";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_modify)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +247,6 @@
         private System.Windows.Forms.Label lbl_preis;
         private System.Windows.Forms.Label lbl_pn;
         private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.PictureBox pb_modify;
     }
 }

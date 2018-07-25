@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDialogAddItem));
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_pn = new System.Windows.Forms.Label();
             this.lbl_preis = new System.Windows.Forms.Label();
@@ -185,6 +186,7 @@
             // 
             // pb_addItem
             // 
+            this.pb_addItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pb_addItem.BackgroundImage")));
             this.pb_addItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pb_addItem.Location = new System.Drawing.Point(0, 24);
             this.pb_addItem.Margin = new System.Windows.Forms.Padding(0);
