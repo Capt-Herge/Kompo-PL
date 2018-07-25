@@ -7,7 +7,7 @@ using PartsLogic;
 
 namespace PartsData.Access
 {
-    class CDataAdd
+    class CDataAdd : ADataAdd
     {
     }
 }

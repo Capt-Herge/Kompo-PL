@@ -7,7 +7,7 @@ using PartsLogic;
 
 namespace PartsData
 {
-    class ADataAdd
+    class ADataAdd : IDataAdd
     {
     }
 }

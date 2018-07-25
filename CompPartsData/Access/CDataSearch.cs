@@ -7,7 +7,7 @@ using PartsLogic;
 
 namespace PartsData.Access
 {
-    class CDataSearch
+    class CDataSearch : ADataSearch
     {
     }
 }
