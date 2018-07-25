@@ -41,12 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CLogic.cs" />
-    <Compile Include="CLogicCount.cs" />
-    <Compile Include="CLogicManage.cs" />
+    <Compile Include="CLogicAdd.cs" />
     <Compile Include="CLogicModify.cs" />
     <Compile Include="CLogicSearch.cs" />
-    <Compile Include="Factories\AFactoryLogicCount.cs" />
-    <Compile Include="Factories\AFactoryLogicManage.cs" />
+    <Compile Include="Factories\AFactoryLogicAdd.cs" />
     <Compile Include="Factories\AFactoryLogicModify.cs" />
     <Compile Include="Factories\AFactoryLogicSearch.cs" />
     <Compile Include="Factories\CFactoryCLogic.cs" />
@@ -54,14 +52,12 @@
     <Compile Include="Factories\IFactoryIDialog.cs" />
     <Compile Include="Factories\IFactoryILogic.cs" />
     <Compile Include="IData.cs" />
-    <Compile Include="IDataCount.cs" />
-    <Compile Include="IDataManage.cs" />
+    <Compile Include="IDataAdd.cs" />
     <Compile Include="IDataModify.cs" />
     <Compile Include="IDataSearch.cs" />
     <Compile Include="IDialog.cs" />
     <Compile Include="ILogic.cs" />
-    <Compile Include="ILogicCount.cs" />
-    <Compile Include="ILogicManage.cs" />
+    <Compile Include="ILogicAdd.cs" />
     <Compile Include="ILogicModify.cs" />
     <Compile Include="ILogicSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
