@@ -1,6 +1,6 @@
-﻿namespace PartsUI.AddItem
+﻿namespace PartsUI.Add
 {
-    partial class CDialogAddItem
+    partial class CDialogAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDialogAddItem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CDialogAdd));
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_pn = new System.Windows.Forms.Label();
             this.lbl_preis = new System.Windows.Forms.Label();
@@ -121,6 +121,7 @@
             this.zurückZumMenüToolStripMenuItem.Name = "zurückZumMenüToolStripMenuItem";
             this.zurückZumMenüToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.zurückZumMenüToolStripMenuItem.Text = "Zurück zum Menü";
+            this.zurückZumMenüToolStripMenuItem.Click += new System.EventHandler(this.zurückZumMenüToolStripMenuItem_Click);
             // 
             // tb_name
             // 
@@ -173,6 +174,7 @@
             this.btn_abbrechen.TabIndex = 13;
             this.btn_abbrechen.Text = "Abbrechen";
             this.btn_abbrechen.UseVisualStyleBackColor = true;
+            this.btn_abbrechen.Click += new System.EventHandler(this.btn_abbrechen_Click);
             // 
             // btn_anlegen
             // 
@@ -183,6 +185,7 @@
             this.btn_anlegen.TabIndex = 14;
             this.btn_anlegen.Text = "Anlegen";
             this.btn_anlegen.UseVisualStyleBackColor = true;
+            this.btn_anlegen.Click += new System.EventHandler(this.btn_anlegen_Click);
             // 
             // pb_addItem
             // 

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PartsLogic;
+﻿using PartsLogic;
+using PartsLogic.Factories;
 
 namespace PartsUI.Factories
 {
-    class CFactoryCDialog
+    public class CFactoryCDialog : IFactoryIDialog
     {
+        public IDialog Create(ILogic iLogic)
+        {
+            return new CDialog(iLogic);
+        }
     }
 }

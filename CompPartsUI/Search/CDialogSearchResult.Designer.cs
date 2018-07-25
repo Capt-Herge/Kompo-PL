@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.zurückZumMenüToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dg_suchergebnis = new System.Windows.Forms.DataGridView();
             this.neueSucheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dg_suchergebnis = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_suchergebnis)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,14 @@
             this.zurückZumMenüToolStripMenuItem.Name = "zurückZumMenüToolStripMenuItem";
             this.zurückZumMenüToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.zurückZumMenüToolStripMenuItem.Text = "Zurück zum Menü";
+            this.zurückZumMenüToolStripMenuItem.Click += new System.EventHandler(this.zurückZumMenüToolStripMenuItem_Click);
+            // 
+            // neueSucheToolStripMenuItem
+            // 
+            this.neueSucheToolStripMenuItem.Name = "neueSucheToolStripMenuItem";
+            this.neueSucheToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.neueSucheToolStripMenuItem.Text = "Neue Suche";
+            this.neueSucheToolStripMenuItem.Click += new System.EventHandler(this.neueSucheToolStripMenuItem_Click);
             // 
             // dg_suchergebnis
             // 
@@ -67,17 +75,11 @@
             this.dg_suchergebnis.Margin = new System.Windows.Forms.Padding(0);
             this.dg_suchergebnis.Name = "dg_suchergebnis";
             this.dg_suchergebnis.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.dg_suchergebnis.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.dg_suchergebnis.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dg_suchergebnis.Size = new System.Drawing.Size(1008, 705);
             this.dg_suchergebnis.TabIndex = 0;
-            // 
-            // neueSucheToolStripMenuItem
-            // 
-            this.neueSucheToolStripMenuItem.Name = "neueSucheToolStripMenuItem";
-            this.neueSucheToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.neueSucheToolStripMenuItem.Text = "Neue Suche";
             // 
             // CDialogSearchResult
             // 

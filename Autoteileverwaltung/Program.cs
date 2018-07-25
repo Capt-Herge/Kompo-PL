@@ -22,7 +22,8 @@ namespace Autoteileverwaltung
         #region methods
         void Run()
         {
-
+            IFactoryILogic factoryLogic = new CFactoryCLogic();
+            IFactoryIDialog factoryDialog = new CFactoryCDialog();
         }
         /// <summary>
         /// The main entry point for the application.

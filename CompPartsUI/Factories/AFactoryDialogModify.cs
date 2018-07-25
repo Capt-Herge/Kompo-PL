@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PartsLogic;
+﻿using PartsLogic;
+using PartsUI.Factories;
 
 namespace PartsUI.Factories
 {
-    class AFactoryDialogModify
+    public abstract class AFactoryDialogModify
     {
+
     }
 }
