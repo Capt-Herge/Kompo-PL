@@ -17,5 +17,12 @@ namespace PartsLogic
             _dataModify = dataModify;
         }
         #endregion
+
+        #region ILogicModify Methods
+        public void ModifyPart(Part partModify)
+        {
+            _dataModify.ModifyPart(partModify);
+        }
+        #endregion
     }
 }

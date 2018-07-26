@@ -23,15 +23,13 @@ namespace PartsData
         }
         #endregion
 
-        #region interface ISearch methods
+        #region interface IDataSearch methods
         public void Init(DbProviderFactory dbProviderFactory, DbConnection dbConnection, DbCommand dbCommand)
         {
             _dbProviderFactory = dbProviderFactory;
             _dbConnection = dbConnection;
             _dbCommand = dbCommand;
         }
-        #endregion
-        
         public void ReadParts(Part part, out DataTable dataTableParts)
         {
             dataTableParts = new DataTable("Parts");
@@ -40,6 +38,7 @@ namespace PartsData
             dbDataAdapter.SelectCommand = _dbCommand;
             int records = dbDataAdapter.Fill(dataTableParts);
         }
+        #endregion
 
         #region virtual methods
         protected virtual void SqlSelectPart(Part partSearch, DbCommand dbCommand)

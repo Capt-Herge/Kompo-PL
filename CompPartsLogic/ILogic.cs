@@ -12,7 +12,7 @@ namespace PartsLogic
         ILogicSearch Search { get; }
 
 
-        void GetHersteller( out object[] arrayMakers );
+        void GetHersteller( out object[] arrayHersteller );
     }
 
 }

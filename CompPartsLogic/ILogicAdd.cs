@@ -7,5 +7,6 @@ namespace PartsLogic
 {
     public interface ILogicAdd
     {
+        void AddPart(Part partAdd);
     }
 }

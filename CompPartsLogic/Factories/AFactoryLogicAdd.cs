@@ -7,7 +7,7 @@ namespace PartsLogic.Factories
         public static void Create(ILogic logic, IDataAdd dataAdd)
         {
             if (logic is CLogic)
-                (logic as CLogic).Add = new CLogicAdd(dataAdd);
+               (logic as CLogic).Add = new CLogicAdd(dataAdd);
         }
     }
 }

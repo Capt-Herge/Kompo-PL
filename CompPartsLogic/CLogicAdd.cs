@@ -17,5 +17,12 @@ namespace PartsLogic
             _dataAdd = dataAdd;
         }
         #endregion
+
+        #region ILogicAdd Methods
+        public void AddPart(Part partAdd)
+        {
+            _dataAdd.AddPart(partAdd);
+        }
+        #endregion
     }
 }

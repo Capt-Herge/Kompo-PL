@@ -44,6 +44,7 @@
     <Compile Include="CLogicAdd.cs" />
     <Compile Include="CLogicModify.cs" />
     <Compile Include="CLogicSearch.cs" />
+    <Compile Include="Exceptions\CDataException.cs" />
     <Compile Include="Factories\AFactoryLogicAdd.cs" />
     <Compile Include="Factories\AFactoryLogicModify.cs" />
     <Compile Include="Factories\AFactoryLogicSearch.cs" />

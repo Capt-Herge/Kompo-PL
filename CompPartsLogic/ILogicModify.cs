@@ -7,5 +7,6 @@ namespace PartsLogic
 {
     public interface ILogicModify
     {
+        void ModifyPart(Part partModify);
     }
 }
