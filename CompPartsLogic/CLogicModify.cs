@@ -23,6 +23,10 @@ namespace PartsLogic
         {
             _dataModify.ModifyPart(partModify);
         }
+        public void DeletePart(Part partDelete)
+        {
+
+        }
         #endregion
     }
 }
