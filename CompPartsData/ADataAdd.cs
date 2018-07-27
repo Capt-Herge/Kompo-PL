@@ -23,7 +23,7 @@ namespace PartsData
         }
         #endregion
 
-        #region interface IDataModify methods
+        #region interface IDataAdd methods
         public void Init(DbProviderFactory dbProviderFactory, DbConnection dbConnection, DbCommand dbCommand)
         {
             //Ablegen des übergebenen Objekte in eigene Felder
@@ -34,12 +34,14 @@ namespace PartsData
 
         public void AddPart(Part partAdd)
         {
-            //Erstellen des Data Adapters
-            DbDataAdapter dbDataAdapter = _dbProviderFactory.CreateDataAdapter();
             //Zusammenbauen des SQL Commands
             this.SqlAddPart(partAdd, _dbCommand);
-            //Ausführen des Kommandos
-            dbDataAdapter.SelectCommand = _dbCommand;
+            //Öffnen der DB-Verbindung
+            _dbConnection.Open();
+            //Ausführen des SQL-Commands
+            int rows = _dbCommand.ExecuteNonQuery();
+            //Schließen der DB-Verbindung
+            _dbConnection.Close();
         }
 
         #endregion
@@ -54,7 +56,7 @@ namespace PartsData
             dbCommand.CommandText = $"INSERT dbo.PartsTable" +
                $" (Name, Hersteller, PN, Beschreibung, Preis, Anzahl )" +
                $" VALUES " +
-               $" ('@Name', '@Hersteller', '@PN', '@Beschreibung', '@Preis', '@Anzahl');";
+               $" (@Name, @Hersteller, @PN, @Beschreibung, @Preis, @Anzahl);";
             //Eintragen der Parameterwerte
             AData.AddParameter(dbCommand, "@Name", partAdd.Name);
             AData.AddParameter(dbCommand, "@Hersteller", partAdd.Hersteller);

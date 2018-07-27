@@ -16,7 +16,7 @@ namespace Autoteileverwaltung
         // State
         private IData _data;
         private ILogic _logic;
-        private IDialog _dialogMain;
+        private IDialog _dialog;
         #endregion
 
         #region methods
@@ -24,7 +24,7 @@ namespace Autoteileverwaltung
         {
             //Connection String zum MSSQL 2016 Server (Standartinstand, Standart-Auth)
             //Server bei Johannes: Server=plasma.selfhost.bz;Database=PartsData;User Id=sa;Password=AngewandteInformatik1337!;
-            string connectionString = "Server=192.168.147.3;Database=PartsData;User Id=sa;Password=AngewandteInformatik1337!;";
+            string connectionString = "Server=plasma.selfhost.bz;Database=PartsData;User Id=sa;Password=AngewandteInformatik1337!;";
 
             //Erstellung - PartsData
             IFactoryIData factoryData = new CFactoryCDataAccess();
@@ -39,16 +39,17 @@ namespace Autoteileverwaltung
 
             //Erstelllung - PartsDialog
             IFactoryIDialog factoryDialog = new CFactoryCDialog();
-            _dialogMain = factoryDialog.Create(_logic);
-            //AFactoryDialogAdd.CreateAdd(_logic.Add, _dialogMain);
-            //AFactoryDialogModify.CreateModify(_logic.Modify, _dialogMain);
-            AFactoryDialogSearch.CreateSearch(_logic.Search, _dialogMain);
+            _dialog = factoryDialog.Create(_logic);
+            AFactoryDialogAdd.CreateAdd(_logic.Add, _dialog);
+            AFactoryDialogModify.CreateModify(_logic.Modify, _dialog);
+            AFactoryDialogSearch.CreateSearch(_logic.Search, _dialog);
+            AFactoryDialogSearch.CreateSearchResult(_dialog);
 
             //Initialisieren der Datenbankverbindung
             _data.Init();
 
             //Initialisierung fertig - Starten des Hauptdialogs
-            Application.Run(_dialogMain as Form);
+            Application.Run(_dialog as Form);
         }
         /// <summary>
         /// The main entry point for the application.

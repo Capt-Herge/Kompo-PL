@@ -33,21 +33,25 @@ namespace PartsData
         }
         public void ModifyPart(Part partModify)
         {
-            //Erstellen des Data Adapters
-            DbDataAdapter dbDataAdapter = _dbProviderFactory.CreateDataAdapter();
             //Zusammenbauen des SQL Commands
             this.SqlModifyPart(partModify, _dbCommand);
+            //Öffnen der DB-Verbindung
+            _dbConnection.Open();
             //Ausführen des Kommandos
-            dbDataAdapter.SelectCommand = _dbCommand;
+            int rows = _dbCommand.ExecuteNonQuery();
+            //Schließen der DB-Verbindung
+            _dbConnection.Close();
         }
         public void DeletePart(Part partDelete)
         {
-            //Erstellen des Data Adapters
-            DbDataAdapter dbDataAdapter = _dbProviderFactory.CreateDataAdapter();
             //Zusammenbauen des SQL Commands
             this.SqlDeletePart(partDelete, _dbCommand);
+            //Öffnen der DB-Verbindung
+            _dbConnection.Open();
             //Ausführen des Kommandos
-            dbDataAdapter.SelectCommand = _dbCommand;
+            int rows = _dbCommand.ExecuteNonQuery();
+            //Schließen der DB-Verbindung
+            _dbConnection.Close();
         }
         #endregion
 
@@ -60,7 +64,7 @@ namespace PartsData
             //Einfügen der parametrisierten Struktur
             dbCommand.CommandText = $"UPDATE PartsTable " +
                $"SET " +
-               $"Name = '@Name', Hersteller = '@Hersteller', PN = '@PN', Beschreibung = '@Beschreibung', Preis = @Preis, Anzahl = @Anzahl " +
+               $"Name = @Name, Hersteller = @Hersteller, PN = @PN, Beschreibung = @Beschreibung, Preis = @Preis, Anzahl = @Anzahl " +
                $"WHERE ID = @ID;";
             //Befüllen der Parameter mit Werten des partModify Objekts
             AData.AddParameter(dbCommand, "@ID", partModify.PkID);

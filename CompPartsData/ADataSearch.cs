@@ -52,32 +52,36 @@ namespace PartsData
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
             dbCommand.CommandText = @"SELECT * FROM PartsTable ";
+            dbCommand.Parameters.Clear();
 
             //Entscheidungsbaum für die weiteren Where-Clauses
-            if(partSearch.Hersteller == null)
+            if (partSearch.Hersteller == "")
             {
                 //partSearch.Hersteller = "*";
                 dbCommand.CommandText += "";
             }
             else
             {
-                dbCommand.CommandText += "WHERE Hersteller = '@Hersteller'";
+                dbCommand.CommandText += "WHERE Hersteller = @Hersteller ";
                 AData.AddParameter(dbCommand, "@Hersteller", partSearch.Hersteller);
             }
             
-            if(partSearch.Name != null)
+            if(partSearch.Name != "")
             {
-                dbCommand.CommandText += " AND Name LIKE '%@Name%'";
+                dbCommand.CommandText += " AND Name LIKE @Name";
+                partSearch.Name = "%" + partSearch.Name + "%";
                 AData.AddParameter(dbCommand, "@Name", partSearch.Name);
             }
-            if (partSearch.PN != null)
+            if (partSearch.PN != "")
             {
-                dbCommand.CommandText += " AND PN LIKE '%@PN%'";
+                dbCommand.CommandText += " AND PN LIKE @PN";
+                partSearch.PN = "%" + partSearch.PN + "%";
                 AData.AddParameter(dbCommand, "@PN", partSearch.PN);
             }
-            if (partSearch.Beschreibung != null)
+            if (partSearch.Beschreibung != "")
             {
-                dbCommand.CommandText += " AND Beschreibung LIKE '%@Beschreibung%'";
+                dbCommand.CommandText += " AND Beschreibung LIKE @Beschreibung";
+                partSearch.Beschreibung = "%" + partSearch.Beschreibung + "%";
                 AData.AddParameter(dbCommand, "@Beschreibung", partSearch.Beschreibung);
             }
         }

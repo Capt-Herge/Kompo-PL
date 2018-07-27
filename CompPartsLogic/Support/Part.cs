@@ -12,7 +12,7 @@ namespace PartsLogic.Support
         public string Hersteller { get; set; }
         public string PN { get; set; }
         public string Beschreibung { get; set; }
-        public double Preis { get; set; }
+        public float Preis { get; set; }
         public int Anzahl { get; set; }
         #endregion
 
@@ -26,7 +26,7 @@ namespace PartsLogic.Support
             Hersteller = Convert.ToString(dataRow.ItemArray[2]);
             PN = Convert.ToString(dataRow.ItemArray[3]);
             Beschreibung = Convert.ToString(dataRow.ItemArray[4]);
-            Preis = Convert.ToDouble(dataRow.ItemArray[5]);
+            Preis = Conversions.ParseFloat(dataRow.ItemArray[5].ToString());
             Anzahl = Convert.ToInt32(dataRow.ItemArray[6]);
         }
         #endregion
