@@ -26,28 +26,60 @@ namespace PartsData
         #region interface IDataModify methods
         public void Init(DbProviderFactory dbProviderFactory, DbConnection dbConnection, DbCommand dbCommand)
         {
+            //Ablegen des übergebenen Objekte in eigene Felder
             _dbProviderFactory = dbProviderFactory;
             _dbConnection = dbConnection;
             _dbCommand = dbCommand;
         }
         public void ModifyPart(Part partModify)
         {
-
+            //Erstellen des Data Adapters
+            DbDataAdapter dbDataAdapter = _dbProviderFactory.CreateDataAdapter();
+            //Zusammenbauen des SQL Commands
+            this.SqlModifyPart(partModify, _dbCommand);
+            //Ausführen des Kommandos
+            dbDataAdapter.SelectCommand = _dbCommand;
         }
         public void DeletePart(Part partDelete)
         {
-
+            //Erstellen des Data Adapters
+            DbDataAdapter dbDataAdapter = _dbProviderFactory.CreateDataAdapter();
+            //Zusammenbauen des SQL Commands
+            this.SqlDeletePart(partDelete, _dbCommand);
+            //Ausführen des Kommandos
+            dbDataAdapter.SelectCommand = _dbCommand;
         }
         #endregion
 
-        #region virtual methods
+        #region protected virtual methods
         protected void SqlModifyPart(Part partModify, DbCommand dbCommand)
         {
-
+            //Definieren des Command Types und vorsichtshalber Leeren des Parameter
+            dbCommand.CommandType = CommandType.Text;
+            dbCommand.Parameters.Clear();
+            //Einfügen der parametrisierten Struktur
+            dbCommand.CommandText = $"UPDATE PartsTable " +
+               $"SET " +
+               $"Name = '@Name', Hersteller = '@Hersteller', PN = '@PN', Beschreibung = '@Beschreibung', Preis = @Preis, Anzahl = @Anzahl " +
+               $"WHERE ID = @ID;";
+            //Befüllen der Parameter mit Werten des partModify Objekts
+            AData.AddParameter(dbCommand, "@ID", partModify.PkID);
+            AData.AddParameter(dbCommand, "@Name", partModify.Name);
+            AData.AddParameter(dbCommand, "@Hersteller", partModify.Hersteller);
+            AData.AddParameter(dbCommand, "@PN", partModify.PN);
+            AData.AddParameter(dbCommand, "@Beschreibung", partModify.Beschreibung);
+            AData.AddParameter(dbCommand, "@Preis", partModify.Preis);
+            AData.AddParameter(dbCommand, "@Anzahl", partModify.Anzahl);
         }
         protected void SqlDeletePart(Part partDelete, DbCommand dbCommand)
         {
-
+            //Definieren des Command Types und vorsichtshalber Leeren des Parameter
+            dbCommand.CommandType = CommandType.Text;
+            dbCommand.Parameters.Clear();
+            //Einfügen der parametrisierten Struktur
+            dbCommand.CommandText = $"DELETE FROM PartsTable WHERE ID = @ID;";
+            //Befüllen des ID Parameters mit Wert aus dem partdelete Objekts
+            AData.AddParameter(dbCommand, "@ID", partDelete.PkID);
         }
         #endregion
     }

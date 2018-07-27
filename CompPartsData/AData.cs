@@ -107,6 +107,7 @@ namespace PartsData
         #endregion
 
         #region protected virtual methods
+
         #endregion
     }
 }

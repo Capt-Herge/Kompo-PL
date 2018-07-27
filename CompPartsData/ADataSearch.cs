@@ -26,53 +26,58 @@ namespace PartsData
         #region interface IDataSearch methods
         public void Init(DbProviderFactory dbProviderFactory, DbConnection dbConnection, DbCommand dbCommand)
         {
+            //Ablegen des übergebenen Objekte in eigene Felder
             _dbProviderFactory = dbProviderFactory;
             _dbConnection = dbConnection;
             _dbCommand = dbCommand;
         }
-        public void ReadParts(Part part, out DataTable dataTableParts)
+        public void ReadParts(Part partSearch, out DataTable dataTableParts)
         {
+            //Anlegen der Output-DataTable
             dataTableParts = new DataTable("Parts");
+            //Erstellen des Data Adapters
             DbDataAdapter dbDataAdapter = _dbProviderFactory.CreateDataAdapter();
-            this.SqlSelectPart(part, _dbCommand);
+            //Zusammenbauen des SQL Commands
+            this.SqlSelectPart(partSearch, _dbCommand);
+            //Ausführen des Kommandos
             dbDataAdapter.SelectCommand = _dbCommand;
             int records = dbDataAdapter.Fill(dataTableParts);
         }
         #endregion
 
-        #region virtual methods
+        #region protected virtual methods
         protected virtual void SqlSelectPart(Part partSearch, DbCommand dbCommand)
         {
-            // todo
-            // Vielleicht Substringsuche einbauen bei Name und Beschreibung
+            //Command Type setzen und einfügen des Anfangs des SQL Kommandos
             dbCommand.CommandType = CommandType.Text;
             dbCommand.Parameters.Clear();
-            dbCommand.CommandText = @"SELECT * FROM PartsTable";
+            dbCommand.CommandText = @"SELECT * FROM PartsTable ";
 
-            if(partSearch.Hersteller == "")
+            //Entscheidungsbaum für die weiteren Where-Clauses
+            if(partSearch.Hersteller == null)
             {
-                partSearch.Hersteller = "*";
-                dbCommand.CommandText = @"WHERE ";
+                //partSearch.Hersteller = "*";
+                dbCommand.CommandText += "";
             }
             else
             {
-                dbCommand.CommandText += "WHERE Hersteller = @Hersteller";
+                dbCommand.CommandText += "WHERE Hersteller = '@Hersteller'";
                 AData.AddParameter(dbCommand, "@Hersteller", partSearch.Hersteller);
             }
             
-            if(partSearch.Name != "")
+            if(partSearch.Name != null)
             {
-                dbCommand.CommandText += " AND Name = @Name";
+                dbCommand.CommandText += " AND Name LIKE '%@Name%'";
                 AData.AddParameter(dbCommand, "@Name", partSearch.Name);
             }
-            if (partSearch.PN != "")
+            if (partSearch.PN != null)
             {
-                dbCommand.CommandText += " AND PN = @PN";
+                dbCommand.CommandText += " AND PN LIKE '%@PN%'";
                 AData.AddParameter(dbCommand, "@PN", partSearch.PN);
             }
-            if (partSearch.Beschreibung != "")
+            if (partSearch.Beschreibung != null)
             {
-                dbCommand.CommandText += " AND Beschreibung = @Beschreibung";
+                dbCommand.CommandText += " AND Beschreibung LIKE '%@Beschreibung%'";
                 AData.AddParameter(dbCommand, "@Beschreibung", partSearch.Beschreibung);
             }
         }

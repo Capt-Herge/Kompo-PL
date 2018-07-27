@@ -9,5 +9,15 @@ namespace PartsData.Access
 {
     class CDataModify : ADataModify
     {
+        #region ctor
+        internal CDataModify(AData data) : base(data)
+        {
+
+        }
+        #endregion
+
+        #region protected methods overrides
+
+        #endregion
     }
 }
