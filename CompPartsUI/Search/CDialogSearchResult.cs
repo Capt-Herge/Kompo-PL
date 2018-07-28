@@ -72,15 +72,19 @@ namespace PartsUI.Search
                 btn.Name = "btn";
                 btn.UseColumnTextForButtonValue = true;
             }
-            //Setzten des AutoSizeColumn Modes für alle Columns
+            //Setzen des AutoSizeColumn Modes für alle Columns
             foreach(DataGridViewColumn dataGridViewColumn in this.dg_suchergebnis.Columns)
             {
                 dataGridViewColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
         }
-        // Eventhalnder Button in DataGridView
+        // Eventhandler Button in DataGridView
         private void dg_suchergebnis_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.ColumnIndex < 0)
+            {
+                return;
+            }
             if(dg_suchergebnis.Columns[e.ColumnIndex].Name == "btn")
             {
                 // Schreiben der Werte des Parts
