@@ -5,7 +5,7 @@ using PartsLogic.Support;
 
 namespace PartsUI.Add
 {
-    public partial class CDialogAdd : Form
+    internal partial class CDialogAdd : Form
     {
         #region fields
         private CDialog _dialog;
@@ -13,7 +13,7 @@ namespace PartsUI.Add
         #endregion
 
         #region ctor
-        public CDialogAdd(ILogicAdd logicAdd, IDialog dialog)
+        internal CDialogAdd(ILogicAdd logicAdd, IDialog dialog)
         {
             InitializeComponent();
             _dialog = dialog as CDialog;
@@ -140,6 +140,7 @@ namespace PartsUI.Add
             }
         }
         #endregion
+        
         #region methods
         //Hilfsmethode für den Input-Check beim Preis
         private bool alreadyExist(string _text, ref char KeyChar)

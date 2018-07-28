@@ -5,7 +5,7 @@ using PartsLogic.Support;
 
 namespace PartsUI.Modify
 {
-    public partial class CDialogModify : Form
+    internal partial class CDialogModify : Form
     {
         #region fields
         private CDialog _dialog;
@@ -13,7 +13,7 @@ namespace PartsUI.Modify
         #endregion
 
         #region ctor
-        public CDialogModify(ILogicModify logicModify, IDialog dialog)
+        internal CDialogModify(ILogicModify logicModify, IDialog dialog)
         {
             InitializeComponent();
             _dialog = dialog as CDialog;

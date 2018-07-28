@@ -10,7 +10,7 @@ using PartsUI.Factories;
 
 namespace Autoteileverwaltung
 {
-    class Program
+    internal class Program
     {
         #region fields
         // State
@@ -20,7 +20,7 @@ namespace Autoteileverwaltung
         #endregion
 
         #region methods
-        void Run()
+        internal void Run()
         {
             //Connection String zum MSSQL 2016 Server (Standartinstand, Standart-Auth)
             //Server bei Johannes: Server=plasma.selfhost.bz;Database=PartsData;User Id=sa;Password=AngewandteInformatik1337!;

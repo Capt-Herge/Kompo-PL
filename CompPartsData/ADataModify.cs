@@ -7,7 +7,7 @@ using PartsLogic.Support;
 
 namespace PartsData
 {
-    class ADataModify : IDataModify
+    internal abstract class ADataModify : IDataModify
     {
         #region fields
         protected AData _data;

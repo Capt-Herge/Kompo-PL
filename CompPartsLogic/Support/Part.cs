@@ -18,17 +18,6 @@ namespace PartsLogic.Support
 
         #region ctor
         public Part() { }
-
-        public Part(DataRow dataRow )
-        {
-            PkID = Convert.ToInt32(dataRow.ItemArray[0]);
-            Name = Convert.ToString(dataRow.ItemArray[1]);
-            Hersteller = Convert.ToString(dataRow.ItemArray[2]);
-            PN = Convert.ToString(dataRow.ItemArray[3]);
-            Beschreibung = Convert.ToString(dataRow.ItemArray[4]);
-            Preis = Convert.ToString(dataRow.ItemArray[5].ToString());
-            Anzahl = Convert.ToInt32(dataRow.ItemArray[6]);
-        }
         #endregion
 
     }

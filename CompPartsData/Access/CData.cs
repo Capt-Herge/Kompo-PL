@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PartsLogic;
-
-namespace PartsData.Access
+﻿namespace PartsData.Access
 {
-    class CData : AData
+    internal class CData : AData
     {
         internal CData(string connection) : base(connection)
         {

@@ -40,7 +40,7 @@ namespace PartsUI
         #endregion
 
         #region ctor
-        public CDialog(ILogic logic)
+        internal CDialog(ILogic logic)
         {
             InitializeComponent();
             _logic = logic;

@@ -5,7 +5,7 @@ using PartsLogic.Support;
 
 namespace PartsUI.Search
 {
-    public partial class CDialogSearch : Form
+    internal partial class CDialogSearch : Form
     {
         #region fields
         private CDialog _dialog;
@@ -13,7 +13,7 @@ namespace PartsUI.Search
         #endregion
 
         #region ctor
-        public CDialogSearch(ILogicSearch logicSearch, IDialog dialog)
+        internal CDialogSearch(ILogicSearch logicSearch, IDialog dialog)
         {
             InitializeComponent();
             _dialog = dialog as CDialog;

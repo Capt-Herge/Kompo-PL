@@ -77,7 +77,7 @@ namespace PartsData
         #endregion
 
         #region static methods
-        public static void Open(DbConnection dbConnection)
+        internal static void Open(DbConnection dbConnection)
         {
             if (dbConnection.State == ConnectionState.Open) return;
             dbConnection.Open();
@@ -87,7 +87,7 @@ namespace PartsData
                 throw new CDataException($"Open() Datenbankverbindung konnte nicht geöffnet werden\n{connection}");
             }
         }
-        public static void Close(DbConnection dbConnection)
+        internal static void Close(DbConnection dbConnection)
         {
             if (dbConnection.State != ConnectionState.Open) return;
             dbConnection.Close();
@@ -97,7 +97,7 @@ namespace PartsData
                 throw new CDataException($"Close() Datenbankverbindung konnte nicht geschlossen werden\n{connection}");
             }
         }
-        public static void AddParameter(DbCommand dbCommand, string name, object value)
+        internal static void AddParameter(DbCommand dbCommand, string name, object value)
         {
             DbParameter dbParameter = dbCommand.CreateParameter();
             dbParameter.ParameterName = name;
@@ -106,8 +106,5 @@ namespace PartsData
         }
         #endregion
 
-        #region protected virtual methods
-
-        #endregion
     }
 }
