@@ -12,19 +12,6 @@ namespace PartsLogic.Support
                 arrayFromList[i] = list[i] as object;
             return arrayFromList;
         }
-        public static float ParseFloat(string s)
-        {
-            float value;
-            //Ersetzen des Punktes als Dezimalbruchzeichen durch das in de-DE verwendete Komma
-            //s = s.Replace(",", ".");
-            //s = String.Format("{0:0.##}", s);
-            s = s.Replace(".", ",");
-            if (!float.TryParse(s, out value))
-            {
-                //Fehler werfen
-            }
-            return value;
-        }
         public static int ParseInt(string s)
         {
             int value;
