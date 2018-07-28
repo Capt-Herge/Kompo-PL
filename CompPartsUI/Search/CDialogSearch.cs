@@ -37,11 +37,15 @@ namespace PartsUI.Search
         // Eventhandler Suchen
         private void btn_suchen_Click(object sender, EventArgs e)
         {
+            Part partSearch = _dialog.PartSearch;
+            partSearch.Hersteller = cb_hersteller.Text;
+            partSearch.Name = tb_name.Text;
+            partSearch.PN = tb_pn.Text;
+            partSearch.Beschreibung = tb_beschreibung.Text;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-        #endregion
-
+        //Eventhandler Laden
         private void CDialogSearch_Load(object sender, EventArgs e)
         {
             if(cb_hersteller.SelectedIndex == -1)
@@ -54,5 +58,7 @@ namespace PartsUI.Search
                 }
             }
         }
+
+        #endregion
     }
 }

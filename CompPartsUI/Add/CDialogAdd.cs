@@ -3,21 +3,21 @@ using System.Windows.Forms;
 using PartsLogic;
 using PartsLogic.Support;
 
-namespace PartsUI.Modify
+namespace PartsUI.Add
 {
-    public partial class CDialogModify : Form
+    public partial class CDialogAdd : Form
     {
         #region fields
         private CDialog _dialog;
-        private ILogicModify _logicModify;
+        private ILogicAdd _logicAdd;
         #endregion
 
         #region ctor
-        public CDialogModify(ILogicModify logicModify, IDialog dialog)
+        public CDialogAdd(ILogicAdd logicAdd, IDialog dialog)
         {
             InitializeComponent();
             _dialog = dialog as CDialog;
-            _logicModify = logicModify;
+            _logicAdd = logicAdd;
         }
         #endregion
 
@@ -27,18 +27,21 @@ namespace PartsUI.Modify
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+
         }
         // Eventhandler Abbrechen
         private void btn_abbrechen_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+
         }
-        // Eventhandler Speichern
-        private void btn_speichern_Click(object sender, EventArgs e)
+        // Eventhandler Anlegen
+        private void btn_anlegen_Click(object sender, EventArgs e)
         {
 
-            Part partModify = _dialog.PartModify;
+
+            Part partAdd = _dialog.PartAdd;
             //Sanity-Check der Werte
             if (tb_name.Text == "")
             {
@@ -65,84 +68,20 @@ namespace PartsUI.Modify
                 MessageBox.Show("Das Feld \"Anzahl\" darf nicht leer bleiben!", "Fehlerhafte Eingabe", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            //Pop-Up Wenn Anzahl 0 Erreicht nach Änderung
             //Schreiben der aktualisierten Werte in die partModify
-            partModify.Name = tb_name.Text;
-            partModify.Hersteller = tb_hersteller.Text;
-            partModify.Beschreibung = tb_beschreibung.Text;
-            partModify.PN = tb_pn.Text;
-            partModify.Anzahl = Conversions.ParseInt(tb_anzahl.Text);
-            partModify.Preis = tb_preis.Text;
+            partAdd.Name = tb_name.Text;
+            partAdd.Hersteller = tb_hersteller.Text;
+            partAdd.Beschreibung = tb_beschreibung.Text;
+            partAdd.PN = tb_pn.Text;
+            partAdd.Anzahl = Conversions.ParseInt(tb_anzahl.Text);
+            partAdd.Preis = tb_preis.Text;
             //Schreiben der partModify in die Datenbank
-            if (partModify.Anzahl == 0)
-            {
-                //Bei erreichen einer Anzahl von 0: Nachfragen ob Part direkt geköscht werden soll
-                DialogResult dialogResult = MessageBox.Show("Die Anzahl der verbleibenden Autoteile ist jetzt 0. \n Soll der Eintrag jetzt gelöscht werden?", "Autoteil vergiffen", MessageBoxButtons.YesNo);
-                //Fall JA --> Löschen und schließen
-                if (dialogResult == DialogResult.Yes)
-                {
-                    _logicModify.DeletePart(partModify);
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                    return;
-                }
-                //Fall Nein --> Ändern und schließen
-                else if (dialogResult == DialogResult.No)
-                {
-                    _logicModify.ModifyPart(partModify);
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                    return;
-                }
-                //Alles andere(annahmsweise Abbruch) --> Nur zurück zur DialogModify Form
-                else
-                {
-                    return;
-                }
-            }
-            //Speichern des geänderten Parts
-            _logicModify.ModifyPart(partModify);
-            //Rückgabe des Endzustandes und schließen
+            _logicAdd.AddPart(partAdd);
             this.DialogResult = DialogResult.OK;
             this.Close();
-
         }
-
-        // Eventhandler Laden
-        private void CDialogModify_Load_1(object sender, EventArgs e)
-        {
-            //Befüllen des Lokalen partModify mit dem aus dem Hauptdialog
-            Part partModify = _dialog.PartModify;
-            //Befüllen der Textboxen anhand der Werte im partModify
-            tb_name.Text = partModify.Name;
-            tb_hersteller.Text = partModify.Hersteller;
-            tb_beschreibung.Text = partModify.Beschreibung;
-            tb_pn.Text = partModify.PN;
-            tb_preis.Text = partModify.Preis;
-            tb_anzahl.Text = partModify.Anzahl.ToString();
-            // Wenn Anzahl des Parts 0 ist, Löschen-Button anzeigen
-            if(partModify.Anzahl == 0)
-            {
-                btn_loeschen.Visible = true;
-            }
-            else
-            {
-                btn_loeschen.Visible = false;
-            }
-        }
-
-        // Eventhandler Löschen
-        private void btn_loeschen_Click(object sender, EventArgs e)
-        {
-            Part partModify = _dialog.PartModify;
-            //Löschen des Parts
-            _logicModify.DeletePart(partModify);
-            //Endzustandsweitergabe und schließen des Dialogs
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-            return;
-        }
-
-        // Eventhandler Eigabe bei Preis
+        // Eventhandler Eingabe in Preis -- Beschränken auf Zahl mit einem Punkt/Komma und zwei Stellen dahinter
         private void tb_preis_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
@@ -195,13 +134,12 @@ namespace PartsUI.Modify
         private void tb_anzahl_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Nur Zahlen erlauben
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&  (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
         }
         #endregion
-
         #region methods
         //Hilfsmethode für den Input-Check beim Preis
         private bool alreadyExist(string _text, ref char KeyChar)

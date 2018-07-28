@@ -46,6 +46,7 @@
             this.lbl_pn = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.pb_modify = new System.Windows.Forms.PictureBox();
+            this.btn_loeschen = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_modify)).BeginInit();
             this.SuspendLayout();
@@ -93,9 +94,11 @@
             // tb_anzahl
             // 
             this.tb_anzahl.Location = new System.Drawing.Point(500, 475);
+            this.tb_anzahl.MaxLength = 9;
             this.tb_anzahl.Name = "tb_anzahl";
             this.tb_anzahl.Size = new System.Drawing.Size(300, 20);
             this.tb_anzahl.TabIndex = 26;
+            this.tb_anzahl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_anzahl_KeyPress);
             // 
             // tb_beschreibung
             // 
@@ -107,6 +110,7 @@
             // tb_hersteller
             // 
             this.tb_hersteller.Location = new System.Drawing.Point(500, 275);
+            this.tb_hersteller.MaxLength = 30;
             this.tb_hersteller.Name = "tb_hersteller";
             this.tb_hersteller.Size = new System.Drawing.Size(300, 20);
             this.tb_hersteller.TabIndex = 24;
@@ -114,13 +118,16 @@
             // tb_preis
             // 
             this.tb_preis.Location = new System.Drawing.Point(40, 475);
+            this.tb_preis.MaxLength = 15;
             this.tb_preis.Name = "tb_preis";
             this.tb_preis.Size = new System.Drawing.Size(300, 20);
             this.tb_preis.TabIndex = 23;
+            this.tb_preis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_preis_KeyPress);
             // 
             // tb_pn
             // 
             this.tb_pn.Location = new System.Drawing.Point(40, 375);
+            this.tb_pn.MaxLength = 45;
             this.tb_pn.Name = "tb_pn";
             this.tb_pn.Size = new System.Drawing.Size(300, 20);
             this.tb_pn.TabIndex = 22;
@@ -128,6 +135,7 @@
             // tb_name
             // 
             this.tb_name.Location = new System.Drawing.Point(40, 275);
+            this.tb_name.MaxLength = 45;
             this.tb_name.Name = "tb_name";
             this.tb_name.Size = new System.Drawing.Size(300, 20);
             this.tb_name.TabIndex = 21;
@@ -196,11 +204,24 @@
             this.pb_modify.TabIndex = 29;
             this.pb_modify.TabStop = false;
             // 
+            // btn_loeschen
+            // 
+            this.btn_loeschen.Font = new System.Drawing.Font("Lucida Console", 18F);
+            this.btn_loeschen.Location = new System.Drawing.Point(384, 667);
+            this.btn_loeschen.Name = "btn_loeschen";
+            this.btn_loeschen.Size = new System.Drawing.Size(200, 50);
+            this.btn_loeschen.TabIndex = 30;
+            this.btn_loeschen.Text = "Löschen";
+            this.btn_loeschen.UseVisualStyleBackColor = true;
+            this.btn_loeschen.Visible = false;
+            this.btn_loeschen.Click += new System.EventHandler(this.btn_loeschen_Click);
+            // 
             // CDialogModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.btn_loeschen);
             this.Controls.Add(this.pb_modify);
             this.Controls.Add(this.btn_speichern);
             this.Controls.Add(this.btn_abbrechen);
@@ -224,6 +245,7 @@
             this.Name = "CDialogModify";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Autoteil bearbeiten";
+            this.Load += new System.EventHandler(this.CDialogModify_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_modify)).EndInit();
@@ -251,5 +273,6 @@
         private System.Windows.Forms.Label lbl_pn;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.PictureBox pb_modify;
+        private System.Windows.Forms.Button btn_loeschen;
     }
 }

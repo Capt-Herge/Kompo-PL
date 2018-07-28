@@ -27,15 +27,16 @@ namespace PartsUI
         #endregion
 
         #region properties
+        //Fields Getter
         internal object[] Hersteller { get { return _arrayHersteller; } }
         internal Part PartModify { get { return _partModify; } }
         internal Part PartAdd { get { return _partAdd; } }
         internal Part PartSearch { get { return _partSearch; } }
-
+        //Dialoge
         internal CDialogSearch DialogSearch { get; set; }
         internal CDialogSearchResult DialogSearchResult { get; set; }
-        internal CDialogModify CDialogModify { get; set; }
-        internal CDialogAdd CDialogAdd { get; set; }
+        internal CDialogModify DialogModify { get; set; }
+        internal CDialogAdd DialogAdd { get; set; }
         #endregion
 
         #region ctor
@@ -55,7 +56,30 @@ namespace PartsUI
         {
             try
             {
-
+                //Vorweg anlegen der DataTable
+                DataTable dataTable;
+                //Befülle einen Part mit nur leeren Parametern
+                Part showAll = new Part();
+                showAll.Hersteller = "";
+                showAll.Name = "";
+                showAll.PN = "";
+                showAll.Beschreibung = "";
+                //Führe die Suche auf "alles" aus
+                _logic.Search.ReadParts(showAll, out  dataTable);
+                //Schreibe Datatable zum DialogSearchResult
+                DialogSearchResult.ResultTable = dataTable;
+                //Wechsle zum DialogSearchResult
+                DialogSearchResult.MenuNeueSuche.Visible = false;
+                DialogResult dialogResult = DialogSearchResult.ShowDialog();
+                //Leeren der lokalen DataTable
+                dataTable.Clear();
+                //Direkter Verweis von da aus zum DialogModify
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //Wechsel zu DialogModify
+                    dialogResult = DialogModify.ShowDialog();
+                }
+                
             }
             catch(Exception exception)
             {
@@ -67,20 +91,43 @@ namespace PartsUI
         {
             try
             {
+                //Erstellen der Hersteller Liste für ComboBox
                 _logic.GetHersteller(out _arrayHersteller);
                 bool loop = true;
+                //Schleife zum Wechseln zwischen den Suchen/Bearbeiten Dialogen
                 while(loop)
                 {
+                    //Anzeigen des suchen Dialogs
                     DialogResult dialogResult = DialogSearch.ShowDialog();
-
+                    //Bei Klick auf "Suchen" --> Wechsel zu DialogSearchResult
                     if(dialogResult == DialogResult.OK)
                     {
+                        //DB Abfrage nach Suchparametern
                         _logic.Search.ReadParts(_partSearch, out DataTable dataTable);
+                        //Schreiben des dataTables in das vorgesehenen Feld von DialogSearchResult
                         DialogSearchResult.ResultTable = dataTable;
+                        //Anzeigen des DialogSearchresult
+                        DialogSearchResult.MenuNeueSuche.Visible = true;
                         dialogResult = DialogSearchResult.ShowDialog();
-                        if (dialogResult != DialogResult.OK)
+                        //Entscheidungsbaum für Sprung aus DialogSearchResult
+                        //Wenn Abbruch: Loop verlassen -> Zurück zum Hauptdialog
+                        if (dialogResult != DialogResult.OK && dialogResult != DialogResult.Yes)
                         {
+                            // Rückkehr zum Hauptdialog durch Austritt aus Schleife
                             loop = false;
+                        }
+                        //Wenn Click auf Bearbeiten Button --> Wechsel zum DialogModify
+                        else if(dialogResult == DialogResult.Yes)
+                        {
+                            //Wechsel zu DialogModify
+                            dialogResult = DialogModify.ShowDialog();
+                            //Wenn wir hier fertig sind, wollen wir im Hauptdialog landen
+                            loop = false;
+                        }
+                        //Wenn OK --> Wechsel zurück zum DialogSearch via Loop
+                        else
+                        {
+                            //Nix zu tun
                         }
                     }
                     else
@@ -99,9 +146,9 @@ namespace PartsUI
         {
             try
             {
-
+                DialogResult dialogResult = DialogAdd.ShowDialog();
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 MessageBox.Show(exception.Message, "Die Aktion musste leider abgebrochen werden", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

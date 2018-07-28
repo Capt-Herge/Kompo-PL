@@ -78,6 +78,7 @@
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.dg_suchergebnis.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dg_suchergebnis.RowTemplate.Height = 26;
             this.dg_suchergebnis.Size = new System.Drawing.Size(1008, 705);
             this.dg_suchergebnis.TabIndex = 0;
             this.dg_suchergebnis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_suchergebnis_CellClick);
