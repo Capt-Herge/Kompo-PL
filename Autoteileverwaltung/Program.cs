@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Configuration;
 using System.Windows.Forms;
 using PartsData.Factories;
 using PartsLogic;
@@ -22,9 +20,23 @@ namespace Autoteileverwaltung
         #region methods
         internal void Run()
         {
-            //Connection String zum MSSQL 2016 Server (Standartinstand, Standart-Auth)
+            //Connection String zum MSSQL 2016 Server (Standartinstanz, Standart-Auth)
+            //Prüfen ob Alle werte in der Config vorhanden sind. Wenn nein: Fallback auf Test-Server
             //Server bei Johannes: Server=plasma.selfhost.bz;Database=PartsData;User Id=sa;Password=AngewandteInformatik1337!;
-            string connectionString = "Server=plasma.selfhost.bz;Database=PartsData;User Id=sa;Password=AngewandteInformatik1337!;";
+            string connectionString;
+            if (ConfigurationManager.AppSettings["connection"] != null)
+            {
+                //connectionString =
+                // "Server=" + ConfigurationManager.AppSettings["Server"] + ";" +
+                // "Database=" + ConfigurationManager.AppSettings["Database"] + ";" +
+                // "User Id=" + ConfigurationManager.AppSettings["User"] + ";" +
+                // "Password=" + ConfigurationManager.AppSettings["Password"] + ";";
+                connectionString = ConfigurationManager.AppSettings["connection"];
+            }
+            else
+            {
+                connectionString = "Server=plasma.selfhost.bz;Database=PartsData;User Id=sa;Password=AngewandteInformatik1337!;";
+            }
 
             //Erstellung - PartsData
             IFactoryIData factoryData = new CFactoryCDataAccess();

@@ -11,6 +11,26 @@
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Johannes\Desktop\Neuer Ordner\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>Autoteileverwaltung</ProductName>
+    <PublisherName>Hergen Paradies &amp; Johannes Schuhn</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,8 +51,27 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>93DB65CFC3097B2AF36469AF2C4D75AEECE1682D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Autoteileverwaltung_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,6 +95,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -67,7 +107,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CompPartsData\CompPartsData.csproj">
@@ -82,6 +124,30 @@
       <Project>{fd6057c1-b17c-47fb-a84c-b30302ccf9e6}</Project>
       <Name>CompPartsUI</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Autoteileverwaltung.exe.config">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
